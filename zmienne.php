@@ -36,7 +36,7 @@ $dziesietna = 6.125;
 $tekst1 = "tekst";
 $tekst2 = 'tekst';
 
-//heredoc                   // TEKST - etykieta
+// heredoc                  // TEKST - etykieta
 $imie = "Jan";
 $napis = <<<TEKST
 Mam na imię: $imie
@@ -46,7 +46,7 @@ TEKST;
 
 echo $napis;
 
-//nowdoc                    // TEKST - etykieta
+// nowdoc                   // TEKST - etykieta
 $nazwisko = "Kowalski";
 $napis2 = <<<NAZWISKO
 Mam na nazwisko: $nazwisko
@@ -56,7 +56,22 @@ NAZWISKO;
 
 echo $napis2;
 
+//
+// Typy złożone
+//
+// typ array
+// typ object
+
+//
+// Typ specjalny
+//
+// typ resource
+// typ null
 
 
+$inna = null;
+$inna1 = NULL;
+
+echo "Zmienna wynosi: ", $inna, ".";     // Zmienna wynosi: .
 
 ?>
