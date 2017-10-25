@@ -43,6 +43,37 @@
 
     </form>
 
+    <br /><br /><br /><br />
+
+
+    <form method="get">
+        Ta sama strona<br />
+        <input type="radio" name="kolor" value="bialy" />Biały<br />
+        <input type="radio" name="kolor" value="czarny" />Czarny<br />
+        <input type="radio" name="kolor" value="zielony" />Zielony<br />
+        <input type="radio" name="kolor" value="czerwony" />Czerwony<br />
+
+        <input type="submit" name="przycisk" value="Wybierz kolor" />
+
+    </form>
+
+    <?php
+
+    if(isset($_GET["przycisk"])) {
+
+        if(isset($_GET["kolor"])) {
+            $kolor = $_GET["kolor"];
+            echo "Wybrałeś kolor: $kolor";
+        } else {
+            echo 'Nie zaznaczyłeś pola radio';
+        }
+
+    }
+
+
+
+    ?>
+
 
 </body>
 </html>
