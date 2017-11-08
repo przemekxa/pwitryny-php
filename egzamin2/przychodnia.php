@@ -77,34 +77,10 @@ FORM;
     <div id="prawy">
 
         <h2>INFORMACJE SZCZEGÓŁOWE O PACJENCIE</h2>
-
-        <?php
-
-            if(isset($_GET["przycisk"]) && isset($_GET["id"])) {
-                $id = $_GET["id"];
-
-                if($r = $connection->query("SELECT imie, nazwisko, choroby_przewlekle, uczulenia FROM `pacjenci` WHERE id = '$id';")) {
-
-                $w = $r->fetch_assoc();
-                echo <<<PACJENT
-                    <p>Imię i nazwisko: {$w['imie']} {$w['nazwisko']}</p>
-                    <p>Choroby przewlekłe: {$w['choroby_przewlekle']}</p>
-                    <p>Uczulenia: {$w['uczulenia']}</p>
-PACJENT;
-
-
-                } else echo "Blędne zapytanie.<br />";
-
-            }
-
-        ?>
-
+        <p>Brak wybranego pacjenta</p>
 
     </div>
-    <div id="stopka">
-        <p>utworzone przez: 000000000</p>
-        <a href="kwerendy.txt">Pobierz plik z kwerendami</a>
-    </div>
+    <div id="stopka"></div>
 
 
 </body>
