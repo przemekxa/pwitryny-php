@@ -55,6 +55,8 @@
         </form>
 FORM;
 
+        $connection->close();
+
         ?>
 
 

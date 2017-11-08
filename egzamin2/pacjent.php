@@ -97,6 +97,8 @@ PACJENT;
 
             }
 
+            $connection->close();
+
         ?>
 
 
