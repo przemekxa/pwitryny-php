@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Przychodnia - usuwanie danych</title>
+    <title>Przychodnia - dodawanie danych</title>
     <style>
         table {
             border-collapse: collapse;
@@ -38,7 +38,6 @@
             <th><a href='?sort=uczulenia'>uczulenia</a></th>
             <th><a href='?sort=choroba'>choroba</a></th>
             <th><a href='?sort=leki_przepisane'>leki przepisane</th>
-            <th>usuń</th>
             </tr>";
 
             while($w = $r->fetch_assoc()) {
@@ -52,7 +51,6 @@
                 <td>{$w['uczulenia']}</td>
                 <td>{$w['choroba']}</td>
                 <td>{$w['leki_przepisane']}</td>
-                <td><a href='delete.php?id=$w[id]'>usuń</a></td>
 
                 </tr>
 WIERSZ;
@@ -67,6 +65,17 @@ WIERSZ;
     } else echo "Błąd : ".$p->connect_errno.".<br />";
 
 ?>
+    <br />
+    <form action="insert.php" method="post">
+        <input type="text" name="imie" placeholder="imię" /><br /><br />
+        <input type="text" name="nazwisko" placeholder="nazwisko" /><br /><br />
+        <input type="text" name="choroby_przewlekle" placeholder="choroby przewlekłe" /><br /><br />
+        <input type="text" name="uczulenia" placeholder="uczulenia" /><br /><br />
+        <input type="text" name="choroba" placeholder="choroba" /><br /><br />
+        <input type="text" name="leki_przepisane" placeholder="leki przepisane" /><br /><br />
+        <textarea name="opis" rows="4" cols="40">opis...</textarea><br /><br />
+        <input type="submit" name="przycisk" value="Dodaj pacjenta" />
+    </form>
 
 
 </body>
