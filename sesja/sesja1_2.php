@@ -1,5 +1,6 @@
 <?php
     session_start();
+    unset($_SESSION["imie"]);       // usunięcie zmiennej z sesji
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +18,7 @@
 
     <br /><br />
 
-    <a href="sesja1_2.php">Następna strona</a>
+    <a href="sesja1.php">Początkowa strona</a>
 
 </body>
 </html>

@@ -10,6 +10,10 @@ $_SESSION["imie"] = "Oliwia";
 </head>
 <body>
 
+    <?php
+        if(isset($_GET["usunSesje"])) session_destroy();
+    ?>
+
     Witamy
     <?php echo $_SESSION["imie"]; ?>
     na stronie.
@@ -22,6 +26,8 @@ $_SESSION["imie"] = "Oliwia";
     <br /><br />
 
     <a href="sesja1_1.php">Następna strona</a>
+    <a href="sesja1.php?usunSesje=true">Usuń sesję</a>
+
 
 </body>
 </html>
