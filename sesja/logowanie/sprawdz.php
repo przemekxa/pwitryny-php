@@ -5,7 +5,7 @@ if(isset($_POST["zaloguj"]) &&
    !empty($_POST["login"]) &&
    !empty($_POST["password"])) {
 
-    $db = new mysqli("localhost", "root", "", "logowanie_4tb");
+    $db = new mysqli("localhost", "logowanie", "haslo", "logowanie_4tb");
 
     if(!$db->connect_error) {
 
