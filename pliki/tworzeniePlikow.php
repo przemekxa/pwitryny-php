@@ -9,9 +9,18 @@
     <form>
         Dodaj folder:<br />
         <input type="text" name="folder" />
-        <input type="submit" name="wyslij" value="Dodaj" />
+        <input type="submit" name="wyslij" value="Dodaj folder" />
+    </form>
+
+    <br />
+
+    <form>
+        Dodaj plik:<br />
+        <input type="text" name="plik" />
+        <input type="submit" name="wyslijPlik" value="Dodaj plik" />
     </form>
     <br />
+
 
 
     <?php
@@ -32,7 +41,30 @@
 
             mkdir("$dir/$folder");
 
-        } else echo "Folder już istnieje<br /><br />";
+        } else echo "Folder \"$folder\" już istnieje<br /><br />";
+
+    }
+
+
+
+    //
+    // dodaj plik
+    //
+
+    if(isset($_GET["wyslijPlik"]) && isset($_GET["plik"])) {
+
+        $plik = $_GET["plik"];
+
+        if(!file_exists("$dir/$plik")) {
+
+            if($fd = fopen("$dir/$plik", "w")) {
+                if(file_exists("$dir/$plik")) {
+                    echo "Dodano plik \"$plik\"<br /><br />";
+                }
+                fclose($fd);
+            }
+
+        } else echo "Plik \"$plik\" już istnieje<br /><br />";
 
     }
 
@@ -101,23 +133,6 @@
 
     }
 
-
-
-
-//    // pokaz zawartosc folderu - stare
-//
-//    $sort = 0;
-//    if(isset($_GET["sort"])) $sort = $_GET["sort"];
-//
-//    $pliki = scandir($dir, $sort);  // 1 - malejąco; 0 i inne - rosnąco
-//
-//    foreach($pliki as $p) {
-//
-//        if($p != "." && $p != "..") {
-//            echo "<li>$p <a href='?usun=$p'>usuń</a></li>";
-//        }
-//
-//    }
 
     ?>
 
