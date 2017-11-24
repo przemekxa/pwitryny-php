@@ -13,7 +13,7 @@
     $wolneMiejsce = round($wolneMiejsce / (1024*1024*1024), 2);     // w GiB
 
     $partycja = disk_total_space("/");      // w bajtach
-    $partycja = round($partycja / (1024**3), 2);
+    $partycja = round($partycja / (1024**3), 2);            // w GiB
 
     echo "Wolne miejsce na partycji: $wolneMiejsce GiB.<br />";
     echo "Wielkość partycji: $partycja GiB.<br /><br />";
