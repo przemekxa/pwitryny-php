@@ -1,0 +1,33 @@
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+#baner {
+    background-color: #9A6000;
+    color: white;
+    font-size: 180%;
+    text-align: center;
+    padding: 20px;
+}
+
+#lewy {
+    width: 60%;
+    float: left;
+}
+
+#prawy {
+    background-color: #C47A00;
+    color: white;
+    width: 40%;
+    float: left;
+    height: calc(100vh - 182px);
+}
+
+h3 {
+    text-align: center;
+}
+
+ul {
+    margin: 10px;
+}
